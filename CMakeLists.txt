@@ -6,6 +6,9 @@ cmake_minimum_required(VERSION 3.5)
 # Set the project name
 project (CppTests)
 
+# set the C++ standard to C++ 11
+set(CMAKE_CXX_STANDARD 11)
+
 # Create a sources variable with a link to all cpp files to compile
 # Don't kwnow how to match with wildcard.
 set(SOURCES
