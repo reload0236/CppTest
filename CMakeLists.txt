@@ -9,12 +9,14 @@ project (CppTests)
 # set the C++ standard to C++ 11
 set(CMAKE_CXX_STANDARD 11)
 
-#file( GLOB HEADERS Include/Tests/*.h)
-file(GLOB UN_GROUPED_SOURCES Source/*.cpp)
+file(GLOB ROOT_SOURCES Source/*.cpp)
+file(GLOB TEST_HEADERS Include/Tests/*.h)
 file(GLOB TEST_SOURCES Source/Tests/*.cpp)
-file(GLOB SOURCES ${UN_GROUPED_SOURCES} ${TEST_SOURCES})
+file(GLOB SOURCES ${ROOT_SOURCES} ${TEST_HEADERS} ${TEST_SOURCES})
 
-source_group("Source" FILES ${UN_GROUPED_SOURCES} )
+source_group("Source" FILES ${ROOT_SOURCES} )
+# TODO The slash makes an issue on windows. 
+source_group("Include/Tests" FILES ${TEST_HEADERS})
 source_group("Source/Tests" FILES ${TEST_SOURCES})
 
 # Add an executable with the above sources
