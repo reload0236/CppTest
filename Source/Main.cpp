@@ -5,12 +5,12 @@
 #include <unordered_map>
 #include <initializer_list>
 
-#include "Tests/Test.h"
-#include "Tests/DebugSymbolTest.h"
-#include "Tests/AllocatorTest.h"
-#include "Tests/RightReferenceTest.h"
-#include "Tests/FunctionTest.h"
-#include "Tests/UnorderedMapTest.h"
+#include "../Include/Tests/Test.h"
+#include "../Include/Tests/DebugSymbolTest.h"
+#include "../Include/Tests/AllocatorTest.h"
+#include "../Include/Tests/RightReferenceTest.h"
+#include "../Include/Tests/FunctionTest.h"
+#include "../Include/Tests/UnorderedMapTest.h"
 
 
 int main()

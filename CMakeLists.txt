@@ -9,11 +9,10 @@ project (CppTests)
 # set the C++ standard to C++ 11
 set(CMAKE_CXX_STANDARD 11)
 
-# Create a sources variable with a link to all cpp files to compile
-# Don't kwnow how to match with wildcard.
-set(SOURCES
-    Source/Main.cpp
-)
+#file( GLOB HEADERS Include/Tests/*.h)
+file( GLOB SOURCES Source/*.cpp Source/Tests/*.cpp)
+
+#source_group("Tests" FILES ${SOURCES})
 
 # Add an executable with the above sources
 add_executable(CppTests ${SOURCES})
@@ -22,5 +21,5 @@ add_executable(CppTests ${SOURCES})
 # when running g++ these will be included as -I/directory/path/
 target_include_directories(CppTests
     PRIVATE 
-        ${PROJECT_SOURCE_DIR}/Source
+        ${PROJECT_SOURCE_DIR}/Include
 )
