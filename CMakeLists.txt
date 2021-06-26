@@ -10,9 +10,12 @@ project (CppTests)
 set(CMAKE_CXX_STANDARD 11)
 
 #file( GLOB HEADERS Include/Tests/*.h)
-file( GLOB SOURCES Source/*.cpp Source/Tests/*.cpp)
+file(GLOB UN_GROUPED_SOURCES Source/*.cpp)
+file(GLOB TEST_SOURCES Source/Tests/*.cpp)
+file(GLOB SOURCES ${UN_GROUPED_SOURCES} ${TEST_SOURCES})
 
-#source_group("Tests" FILES ${SOURCES})
+source_group("Source" FILES ${UN_GROUPED_SOURCES} )
+source_group("Source/Tests" FILES ${TEST_SOURCES})
 
 # Add an executable with the above sources
 add_executable(CppTests ${SOURCES})
