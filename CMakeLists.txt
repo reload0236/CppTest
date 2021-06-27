@@ -15,9 +15,14 @@ file(GLOB TEST_SOURCES Source/Tests/*.cpp)
 file(GLOB SOURCES ${ROOT_SOURCES} ${TEST_HEADERS} ${TEST_SOURCES})
 
 source_group("Source" FILES ${ROOT_SOURCES} )
-# TODO The slash makes an issue on windows. 
-source_group("Include/Tests" FILES ${TEST_HEADERS})
-source_group("Source/Tests" FILES ${TEST_SOURCES})
+# TODO Should find a better way to differenciate path seperator on different platforms.
+if (WIN32)
+    source_group("Include\\Tests" FILES ${TEST_HEADERS})
+    source_group("Source\\Tests" FILES ${TEST_SOURCES})
+else ()
+    source_group("Include/Tests" FILES ${TEST_HEADERS})
+    source_group("Source/Tests" FILES ${TEST_SOURCES})
+endif ()
 
 # Add an executable with the above sources
 add_executable(CppTests ${SOURCES})
