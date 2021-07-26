@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <initializer_list>
 
+#include "../Include/Version.h"
 #include "../Include/Tests/Test.h"
 #include "../Include/Tests/DebugSymbolTest.h"
 #include "../Include/Tests/AllocatorTest.h"
@@ -15,6 +16,8 @@
 
 int main()
 {
+	std::cout << CPP_TESTS_VERSION << std::endl;
+
 	std::unordered_map<std::string, std::shared_ptr<Test>> testsMap;
 	testsMap.insert( {"DebugSymbolTest", std::make_shared<DebugSymbolTest>()} );
 	testsMap.insert( {"AllocatorTest", std::make_shared<AllocatorTest>()} );
@@ -22,7 +25,7 @@ int main()
 	testsMap.insert( {"FunctionTest", std::make_shared<FunctionTest>()} );
 	testsMap.insert( {"UnorderedMapTest", std::make_shared<UnorderedMapTest>()} );
 
-	testsMap["UnorderedMapTest"]->Run();
+	// testsMap["UnorderedMapTest"]->Run();
 
 	return 0;
 }

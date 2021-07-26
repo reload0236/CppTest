@@ -1,0 +1,6 @@
+#ifndef VERSION_H
+#define VERSION_H
+
+const char* CPP_TESTS_VERSION = "${CPP_TESTS_VERTION}";
+
+#endif
