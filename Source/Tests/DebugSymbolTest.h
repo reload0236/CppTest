@@ -2,10 +2,10 @@
 
 #include <iostream>
 
-#include "Test.h"
+#include "Runnable.h"
 
 
-class DebugSymbolTest : public Test
+class DebugSymbolTest : public Runnable
 {
 public:
 	inline void Run() override

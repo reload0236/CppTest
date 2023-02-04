@@ -2,7 +2,7 @@
 #include <vector>
 #include <memory>
 
-#include "../Include/Tests/AllocatorTest.h"
+#include "AllocatorTest.h"
 
 
 void AllocatorTest::Run()

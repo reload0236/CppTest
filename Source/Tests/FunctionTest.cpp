@@ -1,7 +1,7 @@
 #include <functional>
 #include <iostream>
 
-#include "../Include/Tests/FunctionTest.h"
+#include "FunctionTest.h"
 
 
 namespace {

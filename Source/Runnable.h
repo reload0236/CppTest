@@ -1,10 +1,10 @@
 #pragma once
 
 
-class Test
+class Runnable
 {
 public:
-	virtual ~Test() = default;
+	virtual ~Runnable() = default;
 
 	virtual void Run() = 0;
 };

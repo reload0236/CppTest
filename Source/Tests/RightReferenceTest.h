@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Test.h"
+#include "../Runnable.h"
 
-class RightReferenceTest : public Test
+class RightReferenceTest : public Runnable
 {
 public:
 	RightReferenceTest() = default;

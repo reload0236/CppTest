@@ -1,7 +1,7 @@
 #include <functional>
 #include <iostream>
 
-#include "../Include/Tests/RightReferenceTest.h"
+#include "RightReferenceTest.h"
 
 
 namespace {

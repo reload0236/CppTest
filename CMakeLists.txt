@@ -18,21 +18,21 @@ set (CPP_TESTS_VERTION "${CPP_TESTS_VERTION_MAJOR}.${CPP_TESTS_VERTION_MINOR}.${
 
 # Call configure files on Version.h.in to set the version.
 # Uses the standard ${VARIABLE} syntax in the file
-configure_file(Version.h.in ${CMAKE_CURRENT_BINARY_DIR}/Include/Version.h)
+configure_file(Version.h.in ${CMAKE_CURRENT_BINARY_DIR}/../Source/Version.h)
 
-file(GLOB ROOT_SOURCES Source/*.cpp)
-file(GLOB TEST_HEADERS Include/Tests/*.h)
-file(GLOB TEST_SOURCES Source/Tests/*.cpp)
-file(GLOB SOURCES ${ROOT_SOURCES} ${TEST_HEADERS} ${TEST_SOURCES})
+file(GLOB ROOT_SOURCES Source/*.cpp Source/*.h)
+file(GLOB TEST_SOURCES Source/Tests/*.cpp Source/Tests/*.h)
+file(GLOB PRACTICE_SOURCES Source/Practice/*.cpp Source/Practice/*.h)
+file(GLOB SOURCES ${ROOT_SOURCES} ${TEST_SOURCES} ${PRACTICE_SOURCES})
 
 source_group("Source" FILES ${ROOT_SOURCES} )
 # TODO Should find a better way to differenciate path seperator on different platforms.
 if (WIN32)
-    source_group("Include\\Tests" FILES ${TEST_HEADERS})
     source_group("Source\\Tests" FILES ${TEST_SOURCES})
+    source_group("Source\\Practice" FILES ${PRACTICE_SOURCES})
 else ()
-    source_group("Include/Tests" FILES ${TEST_HEADERS})
     source_group("Source/Tests" FILES ${TEST_SOURCES})
+    source_group("Source/Practice" FILES ${PRACTICE_SOURCES})
 endif ()
 
 # Add an executable with the above sources
