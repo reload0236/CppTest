@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "Runnable.h"
+#include "../Runnable.h"
 
 
 class DebugSymbolTest : public Runnable

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Runnable.h"
+#include "../Runnable.h"
 
 
 class LengthOfLongestSubstring : public Runnable
